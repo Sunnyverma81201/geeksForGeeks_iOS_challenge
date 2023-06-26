@@ -11,7 +11,7 @@ import SwiftUI
 struct GFG_ChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticlesFeedView(articleFeedViewModel: ArticleFieldViewModel(articleRepositoryImpl: ArticleRepositoryImpl()))
         }
     }
 }
