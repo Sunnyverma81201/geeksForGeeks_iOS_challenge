@@ -2,4 +2,4 @@
 
 - Language Used: Swift
 - Framework: SwiftUI
-- Architecture: MVVM
+- Architecture: MVVM with Clean Architecture
