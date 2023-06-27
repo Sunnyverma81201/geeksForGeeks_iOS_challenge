@@ -49,6 +49,7 @@ struct ArticlesFeedView: View {
                                     PostCardView(postCardViewModel: PostCardViewMdoel(isTopArticle: false, article: article))
                                 }
                             }
+                            .padding(.bottom)
                     }
                     
                 }

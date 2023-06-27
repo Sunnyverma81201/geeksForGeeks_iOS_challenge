@@ -14,7 +14,7 @@ struct ChipView: View {
             Text(chipViewModel.text)
                 .font(.system(size: 14))
                 .foregroundColor(.white)
-                .padding(.horizontal, 8)
+                .padding(.horizontal, 10)
                 .padding(.vertical, 4)
                 .background(RoundedRectangle(cornerRadius: 16)
                     .foregroundColor(.accentColor))

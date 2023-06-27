@@ -13,11 +13,11 @@ struct ArticleDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack (alignment: .center, spacing: 20){
-                    KFImage(URL(string: articleDetailViewModel.article?.enclosure?.link ?? ""))
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 200)
-                        .cornerRadius(20)
+                KFImage(URL(string: articleDetailViewModel.article?.enclosure?.link ?? ""))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .cornerRadius(20)
                 
                 HStack {
                     VStack{
@@ -27,42 +27,35 @@ struct ArticleDetailView: View {
                             .foregroundColor(Color("HeaderTextColor"))
                             .multilineTextAlignment(.leading)
                         
-                            Divider()
-                            
+                        Divider()
                         
                         HStack{
                             Text("")
                                 .getFormattedDateAndTime(articleDetailViewModel.article?.pubDate ?? "")
-                            
-                            Circle()
-                                .frame(width: 5, height: 5)
-                                
-                                
-                            Text(articleDetailViewModel.article?.author ?? "No Publisher")
+                            Spacer()
+                        }
+                        
+                        HStack{
+                            Text("By \(articleDetailViewModel.article?.author ?? "No Publisher")")
                                 .font(Font.custom("Poppoins-Thin", size: 12))
+                                .foregroundColor(.gray)
                             
                             Spacer()
                         }
-                        .foregroundColor(.gray)
-                        
                         
                     }
-                    .padding(.vertical,8)
                     
                     
                 }
                 
                 //Categories Chips
-                ScrollView(.horizontal,showsIndicators: false){
-                
-                    HStack{
+                ScrollView(.horizontal,showsIndicators: false){                    HStack{
                         if let categories = articleDetailViewModel.article?.categories{
                             ForEach(categories, id: \.self) { category in
                                 ChipView(chipViewModel: ChipViewModel(text: category))
                             }
                         }
                     }
-                    
                 }
                 
                 //Article Body
@@ -70,10 +63,10 @@ struct ArticleDetailView: View {
                     .font(Font.custom("Poppins", size: 14))
                     .foregroundColor(.black.opacity(0.9))
                     .padding(.horizontal,4)
-                    
+                
             }
             .background()
-        .padding(.horizontal)
+            .padding(.horizontal)
         }
         
     }
