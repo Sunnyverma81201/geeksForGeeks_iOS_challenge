@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// All the fetch must follow this protocol
+/// All the fetch operations must follow this protocol
 protocol UseCase {
     func fetchArticles(completion: @escaping (Result<[Article], Error>) -> Void)
 }

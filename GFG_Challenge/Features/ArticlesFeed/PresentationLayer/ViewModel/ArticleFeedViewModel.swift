@@ -7,14 +7,20 @@
 
 import Foundation
 
-class ArticleFieldViewModel: ObservableObject {
+//ViewModel for ArticleFeedView: Takes articleRepositoryImpl as parameter
+class ArticleFeedViewModel: ObservableObject {
+    //MARK: Variables
     private let articleRepositoryImpl: ArticleRepositoryImpl
-    @Published var articles: [Article?] = []
-    @Published var isFetching: Bool = false
     
+    @Published var articles: [Article?] = []
+    @Published var isFetching: Bool = false //to toggle the loading UI
+    
+    //MARK: Constructor
     init(articleRepositoryImpl: ArticleRepositoryImpl) {
         self.articleRepositoryImpl = articleRepositoryImpl
     }
+    
+    //MARK: methods
     func fetchArticles(){
     isFetching = true
     articleRepositoryImpl.fetchArticles { [weak self] result in

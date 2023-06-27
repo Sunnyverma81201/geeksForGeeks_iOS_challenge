@@ -8,7 +8,6 @@
 import Foundation
 
 let sampleArticle = Article(
-    
     title: "'Huge' sinkhole appears in SA city as rock 'dissolves like sugar'",
     pubDate: "2023-06-26 04:44:41",
     link: "https://www.abc.net.au/news/2023-06-26/mount-gambier-watches-for-more-sinkholes-but-prediction-hard/102522908",

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ArticlesFeedView: View {
-    @StateObject var articleFeedViewModel: ArticleFieldViewModel
+    @StateObject var articleFeedViewModel: ArticleFeedViewModel
     
-    init(articleFeedViewModel: ArticleFieldViewModel) {
+    init(articleFeedViewModel: ArticleFeedViewModel) {
         _articleFeedViewModel = StateObject(wrappedValue: articleFeedViewModel)
     }
     
@@ -32,23 +32,23 @@ struct ArticlesFeedView: View {
                 .background()
                 
                 ScrollView(.vertical, showsIndicators: true){
-                    if articleFeedViewModel.isFetching {
-                        ProgressView {
-                            Text("Fetching")
-                        }
-                    } else if articleFeedViewModel.articles.isEmpty {
-                        NoFeedView()
-                    } else {
-                        // Top Feed
-                        PostCardView(postCardViewModel: PostCardViewMdoel(isTopArticle: true, article: articleFeedViewModel.articles[0]))
-                            .padding(.bottom,8)
-                        
-                        // Other Feeds
-                        VStack(spacing: 15){
-                            ForEach(articleFeedViewModel.articles.dropFirst() ,id: \.self?.id) { article in
-                                PostCardView(postCardViewModel: PostCardViewMdoel(isTopArticle: false, article: article))
+                        if articleFeedViewModel.isFetching { //Display Loading Ui When Data is loading
+                            ProgressView {
+                                Text("Fetching")
                             }
-                        }
+                        } else if articleFeedViewModel.articles.isEmpty { //If there is an error and data is not fetched then this view is displayed instead of empty screen
+                            NoFeedView()
+                        } else {
+                            // Top Article
+                            PostCardView(postCardViewModel: PostCardViewMdoel(isTopArticle: true, article: articleFeedViewModel.articles[0]))
+                                .padding(.bottom,8)
+                            
+                            // Other Feed Articles
+                            VStack(spacing: 15){
+                                ForEach(articleFeedViewModel.articles.dropFirst() ,id: \.self?.id) { article in
+                                    PostCardView(postCardViewModel: PostCardViewMdoel(isTopArticle: false, article: article))
+                                }
+                            }
                     }
                     
                 }
@@ -64,11 +64,14 @@ struct ArticlesFeedView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("")
     }
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticlesFeedView(articleFeedViewModel: ArticleFieldViewModel(articleRepositoryImpl: ArticleRepositoryImpl()))
+        ArticlesFeedView(articleFeedViewModel: ArticleFeedViewModel(articleRepositoryImpl: ArticleRepositoryImpl()))
     }
 }

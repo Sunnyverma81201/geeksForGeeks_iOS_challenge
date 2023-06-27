@@ -37,6 +37,11 @@
 		10502D362A49FFAE009DA9E7 /* NoFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D352A49FFAE009DA9E7 /* NoFeedView.swift */; };
 		10502D3A2A4A041E009DA9E7 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D392A4A041E009DA9E7 /* UseCase.swift */; };
 		10502D3E2A4A14C8009DA9E7 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D3D2A4A14C8009DA9E7 /* ArticleRepository.swift */; };
+		10502D442A4A8BE6009DA9E7 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D432A4A8BE6009DA9E7 /* ArticleDetailView.swift */; };
+		10502D462A4A8C26009DA9E7 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D452A4A8C26009DA9E7 /* ArticleDetailViewModel.swift */; };
+		10502D482A4A8CB9009DA9E7 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D472A4A8CB9009DA9E7 /* ViewExtensions.swift */; };
+		10502D542A4A94DF009DA9E7 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D532A4A94DF009DA9E7 /* ChipView.swift */; };
+		10502D562A4A94EB009DA9E7 /* ChipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10502D552A4A94EB009DA9E7 /* ChipViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +95,11 @@
 		10502D352A49FFAE009DA9E7 /* NoFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFeedView.swift; sourceTree = "<group>"; };
 		10502D392A4A041E009DA9E7 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		10502D3D2A4A14C8009DA9E7 /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
+		10502D432A4A8BE6009DA9E7 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		10502D452A4A8C26009DA9E7 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
+		10502D472A4A8CB9009DA9E7 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		10502D532A4A94DF009DA9E7 /* ChipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
+		10502D552A4A94EB009DA9E7 /* ChipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,7 @@
 		10502CE72A496AFE009DA9E7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				10502D3F2A4A89A5009DA9E7 /* ArticleDetails */,
 				10502CE82A496B42009DA9E7 /* ArticlesFeed */,
 			);
 			path = Features;
@@ -269,6 +280,7 @@
 		10502D172A4986C2009DA9E7 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				10502D502A4A94A0009DA9E7 /* ChipView */,
 				10502D182A4986D1009DA9E7 /* PostCard */,
 			);
 			path = Reusable;
@@ -311,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				10502D312A49DF4F009DA9E7 /* DateExtensions.swift */,
+				10502D472A4A8CB9009DA9E7 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +352,64 @@
 				10502D3D2A4A14C8009DA9E7 /* ArticleRepository.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		10502D3F2A4A89A5009DA9E7 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				10502D402A4A89B6009DA9E7 /* PresentationLayer */,
+			);
+			path = ArticleDetails;
+			sourceTree = "<group>";
+		};
+		10502D402A4A89B6009DA9E7 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				10502D422A4A8BC4009DA9E7 /* View */,
+				10502D412A4A8BBB009DA9E7 /* ViewModel */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		10502D412A4A8BBB009DA9E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10502D452A4A8C26009DA9E7 /* ArticleDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		10502D422A4A8BC4009DA9E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10502D432A4A8BE6009DA9E7 /* ArticleDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10502D502A4A94A0009DA9E7 /* ChipView */ = {
+			isa = PBXGroup;
+			children = (
+				10502D522A4A94B6009DA9E7 /* View */,
+				10502D512A4A94A8009DA9E7 /* ViewModel */,
+			);
+			path = ChipView;
+			sourceTree = "<group>";
+		};
+		10502D512A4A94A8009DA9E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10502D552A4A94EB009DA9E7 /* ChipViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		10502D522A4A94B6009DA9E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10502D532A4A94DF009DA9E7 /* ChipView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,12 +563,17 @@
 				10502D292A4993BD009DA9E7 /* ArticleFeedViewModel.swift in Sources */,
 				10502D362A49FFAE009DA9E7 /* NoFeedView.swift in Sources */,
 				10502D1B2A498724009DA9E7 /* PostCardView.swift in Sources */,
+				10502D562A4A94EB009DA9E7 /* ChipViewModel.swift in Sources */,
 				10502D342A49EC87009DA9E7 /* ArticleFeedModel.swift in Sources */,
 				10502D3A2A4A041E009DA9E7 /* UseCase.swift in Sources */,
+				10502D542A4A94DF009DA9E7 /* ChipView.swift in Sources */,
+				10502D482A4A8CB9009DA9E7 /* ViewExtensions.swift in Sources */,
 				10502CED2A497ED1009DA9E7 /* ArticlesFeedView.swift in Sources */,
 				10502D3E2A4A14C8009DA9E7 /* ArticleRepository.swift in Sources */,
+				10502D462A4A8C26009DA9E7 /* ArticleDetailViewModel.swift in Sources */,
 				10502CBD2A49669A009DA9E7 /* GFG_ChallengeApp.swift in Sources */,
 				10502CEF2A49815D009DA9E7 /* Constants.swift in Sources */,
+				10502D442A4A8BE6009DA9E7 /* ArticleDetailView.swift in Sources */,
 				10502D1F2A498876009DA9E7 /* PostCardViewModel.swift in Sources */,
 				10502D222A498904009DA9E7 /* ArticleModel.swift in Sources */,
 				10502D2C2A49C633009DA9E7 /* SampleData.swift in Sources */,
